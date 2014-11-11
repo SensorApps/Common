@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Common</string>
+    <string name="sensor_rate_explanation">Faster rates will give you more fine grained messages, but will drain your battery faster.</string>
+    <string name="sensor_rate">Sensor Rate</string>
+    <string name="sensors">Sensors</string>
+    <string name="sensitity">Sensitivity</string>
+    <string name="sensor_continuously">Send data continuously</string>
+</resources>
