@@ -9,15 +9,15 @@ import java.util.List;
 /**
  * Created by thomas on 05.11.14.
  */
-public  class SensorFactory{
+public class SensorCommunication {
 
 	private final SensorActivity activity;
-	private DataDispatcher dispatcher;
+	private final DataDispatcher dispatcher;
 	private List<Parameters> sensors;
-	private Settings settings;
-	private SensorManager sensorManager;
+	private final Settings settings;
+	private final SensorManager sensorManager;
 
-	public SensorFactory(SensorActivity activity){
+	public SensorCommunication(SensorActivity activity){
 		this.dispatcher = activity.getDispatcher();
 		this.settings = activity.getSettings();
 		this.sensorManager = activity.getSensorManager();

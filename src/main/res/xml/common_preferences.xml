@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/sensors">
-        <org.sensors2.common.preferences.ExtendedEditTextPreference
-            android:defaultValue="0"
-            android:key="pref_general_sensitivity"
-            android:numeric="decimal"
-            android:persistent="true"
-            android:title="@string/sensitity"/>
         <org.sensors2.common.preferences.ExtendedListPreference
             android:defaultValue="1"
             android:entries="@array/sensor_rate_names"
