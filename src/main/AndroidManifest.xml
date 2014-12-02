@@ -11,4 +11,5 @@
     <uses-feature android:name="android.hardware.sensor.gyroscope"/>
     <uses-feature android:name="android.hardware.sensor.light"/>
     <uses-feature android:name="android.hardware.sensor.proximity"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 </manifest>
