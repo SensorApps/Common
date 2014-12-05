@@ -4,6 +4,8 @@ import android.content.Context;
 import android.preference.ListPreference;
 import android.util.AttributeSet;
 
+import org.sensors2.common.R;
+
 /**
  * Created by thomas on 03.11.14.
  */
@@ -42,6 +44,7 @@ public class ExtendedListPreference extends ListPreference {
 		if (this.summaryText == null) {
 			return this.getEntries()[pos];
 		}
-		return this.summaryText + System.getProperty("line.separator") + System.getProperty("line.separator") + "Current value: " + this.getEntries()[pos];
+		return this.summaryText + System.getProperty("line.separator") + System.getProperty("line.separator")
+				+ getContext().getResources().getString(R.string.current_value) + ": " + this.getEntries()[pos];
 	}
 }

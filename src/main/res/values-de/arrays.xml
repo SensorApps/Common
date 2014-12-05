@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sensor_rate_names">
+        <item name="0">am schnellsten</item>
+        <item name="1">Spielegeschwindigkeit</item>
+        <item name="3">normal</item>
+        <item name="2">Benutzeroberfläche (am langsamsten)</item>
+    </string-array>
+</resources>

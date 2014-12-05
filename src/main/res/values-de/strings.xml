@@ -1,0 +1,7 @@
+<resources>
+    <string name="sensor_rate_explanation">Schnellere Raten ergeben genauere Nachrichten, aber führen zu einem höheren Stromverbrauch</string>
+    <string name="sensor_rate">Abtastrate</string>
+    <string name="sensors">Sensoren</string>
+    <string name="sensor_continuously">Daten dauernd senden.</string>
+    <string name="current_value">Aktueller Wert</string>
+</resources>
