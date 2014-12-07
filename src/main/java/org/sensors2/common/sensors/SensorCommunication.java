@@ -29,7 +29,7 @@ public class SensorCommunication {
 	}
 
 	public void onResume() {
-		for (Parameters sensor : this.sensors) {
+		for (Parameters sensor : this.getSensors()) {
 			this.RegisterSensor(sensor);
 		}
 	}
