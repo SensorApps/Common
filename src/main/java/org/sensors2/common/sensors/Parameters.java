@@ -1,14 +1,23 @@
 package org.sensors2.common.sensors;
 
+import android.hardware.Sensor;
+
 /**
  * Created by thomas on 05.11.14.
  */
 public abstract class Parameters {
 	private final int sensorType;
 	private final int dimensions;
+	private final String sensorName;
+	private final float range;
+	private final float resolution;
 
-	public Parameters(int sensorType) {
-		this.sensorType = sensorType;
+
+	public Parameters(Sensor sensor) {
+		this.sensorType = sensor.getType();
+		this.sensorName = sensor.getName();
+		this.range = sensor.getMaximumRange();
+		this.resolution = sensor.getResolution();
 		switch (sensorType) {
 			// 1 int TYPE_ACCELEROMETER A constant describing an accelerometer sensor type.
 			case 1:
@@ -87,4 +96,15 @@ public abstract class Parameters {
 		return this.dimensions;
 	}
 
+	public float getResolution() {
+		return this.resolution;
+	}
+
+	public float getRange() {
+		return this.range;
+	}
+
+	public String getSensorName() {
+		return this.sensorName;
+	}
 }
