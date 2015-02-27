@@ -110,7 +110,7 @@ public abstract class Parameters {
 				break;
 
             default:
-                this.dimensions = 1;
+                this.dimensions = 6;
                 break;
 				//throw new IllegalArgumentException();
 		}
