@@ -2,8 +2,6 @@ package org.sensors2.common.dispatch;
 
 import android.net.wifi.ScanResult;
 
-import org.sensors2.common.dispatch.MeasurementType;
-
 /**
  * Created by thomas on 03.11.14.
  */
