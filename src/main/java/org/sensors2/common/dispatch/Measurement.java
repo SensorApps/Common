@@ -1,6 +1,7 @@
 package org.sensors2.common.dispatch;
 
 import android.net.wifi.ScanResult;
+import android.view.MotionEvent;
 
 /**
  * Created by thomas on 03.11.14.
@@ -25,6 +26,15 @@ public class Measurement {
 		this.values[0] = scanResult.level;
 		this.values[1] = scanResult.frequency;
 		this.type = MeasurementType.Wifi;
+	}
+
+	public Measurement(MotionEvent motionEvent){
+		this.sensorType = 0;
+		this.name = "";
+		this.values = new float[2];
+		this.values[0] = motionEvent.getX();
+		this.values[1] = motionEvent.getY();
+		this.type = MeasurementType.Touch;
 	}
 
 	public float[] getValues() {
