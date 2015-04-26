@@ -4,6 +4,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 
+import org.sensors2.common.dispatch.DataDispatcher;
+import org.sensors2.common.dispatch.Measurement;
+
 import java.util.List;
 
 /**

@@ -3,6 +3,8 @@ package org.sensors2.common.sensors;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
+import org.sensors2.common.dispatch.DataDispatcher;
+
 import java.util.List;
 
 /**

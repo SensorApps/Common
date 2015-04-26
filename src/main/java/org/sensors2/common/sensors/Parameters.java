@@ -83,8 +83,36 @@ public abstract class Parameters {
 			case 16:
 				this.dimensions = 6;
 				break;
-			default:
-				throw new IllegalArgumentException();
+
+            // TYPE_SIGNIFICANT_MOTION A constant describing a significant motion trigger sensor.
+            case 17:
+				this.dimensions = 1;
+				break;
+
+            // TYPE_STEP_COUNTER A constant describing a step detector sensor.
+            case 18:
+				this.dimensions = 1;
+				break;
+
+            // TYPE_STEP_DETECTOR A constant describing a step detector sensor.
+            case 19:
+				this.dimensions = 1;
+				break;
+
+            // TYPE_GEOMAGNETIC_ROTATION_VECTOR A constant describing a geo-magnetic rotation vector.
+            case 20:
+				this.dimensions = 4;
+				break;
+
+            // TYPE_HEART_RATE A constant describing a heart rate monitor.
+            case 21:
+				this.dimensions = 1;
+				break;
+
+            default:
+                this.dimensions = 6;
+                break;
+				//throw new IllegalArgumentException();
 		}
 	}
 
