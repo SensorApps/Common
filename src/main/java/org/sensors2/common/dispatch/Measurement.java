@@ -21,9 +21,9 @@ public class Measurement {
 
 	public Measurement(ScanResult scanResult) {
 		this.sensorType = 0;
-		this.name = scanResult.SSID;
-		this.values = new float[2];
-		this.values[0] = scanResult.level;
+        this.name = scanResult.SSID.replaceAll(" ", "-"); // the receiver can't have spaces
+        this.values = new float[2];
+        this.values[0] = scanResult.level;
 		this.values[1] = scanResult.frequency;
 		this.type = MeasurementType.Wifi;
 	}
