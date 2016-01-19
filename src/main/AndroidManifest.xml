@@ -1,15 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.sensors2.common">
 
-    <application android:allowBackup="true">
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.barometer"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.compass"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.light"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.proximity"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepdetector"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="false" />
 
-    </application>
-
-    <uses-feature android:name="android.hardware.sensor.accelerometer"/>
-    <uses-feature android:name="android.hardware.sensor.barometer"/>
-    <uses-feature android:name="android.hardware.sensor.compass"/>
-    <uses-feature android:name="android.hardware.sensor.gyroscope"/>
-    <uses-feature android:name="android.hardware.sensor.light"/>
-    <uses-feature android:name="android.hardware.sensor.proximity"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.NFC" />
+
 </manifest>

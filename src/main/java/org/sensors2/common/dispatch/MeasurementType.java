@@ -6,5 +6,6 @@ package org.sensors2.common.dispatch;
 public enum MeasurementType {
 	Sensor,
 	Wifi,
-	Touch
+	Touch,
+	Nfc
 }
