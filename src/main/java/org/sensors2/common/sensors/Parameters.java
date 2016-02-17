@@ -1,6 +1,7 @@
 package org.sensors2.common.sensors;
 
 import android.hardware.Sensor;
+import android.nfc.NfcAdapter;
 
 /**
  * Created by thomas on 05.11.14.
@@ -125,6 +126,15 @@ public abstract class Parameters {
                 break;
             //throw new IllegalArgumentException();
         }
+    }
+
+    public Parameters(NfcAdapter nfcAdapter) {
+        this.sensorType = -1;
+        this.sensorName = "NFC";
+        this.range = -1;
+        this.resolution = -1;
+
+        this.dimensions = 1;
     }
 
     public int getSensorType() {
