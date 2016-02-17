@@ -60,7 +60,7 @@ public class SensorCommunication {
 		this.dispatcher.dispatch(new Measurement(sensorEvent.sensor.getType(), sensorEvent.values));
 	}
 
-	public void dispatech(NdefMessage msg) {
+	public void dispatch(NdefMessage msg) {
 		this.dispatcher.dispatch(new Measurement(msg));
 	}
 }
