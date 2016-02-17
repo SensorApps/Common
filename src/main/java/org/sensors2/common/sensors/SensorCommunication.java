@@ -3,6 +3,7 @@ package org.sensors2.common.sensors;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
+import android.nfc.NdefMessage;
 
 import org.sensors2.common.dispatch.DataDispatcher;
 import org.sensors2.common.dispatch.Measurement;
@@ -57,5 +58,9 @@ public class SensorCommunication {
 
 	public void dispatch(SensorEvent sensorEvent) {
 		this.dispatcher.dispatch(new Measurement(sensorEvent.sensor.getType(), sensorEvent.values));
+	}
+
+	public void dispatech(NdefMessage msg) {
+		this.dispatcher.dispatch(new Measurement(msg));
 	}
 }

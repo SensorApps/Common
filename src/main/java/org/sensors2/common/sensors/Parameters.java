@@ -129,7 +129,7 @@ public abstract class Parameters {
     }
 
     public Parameters(NfcAdapter nfcAdapter) {
-        this.sensorType = -1;
+        this.sensorType = 0;
         this.sensorName = "NFC";
         this.range = -1;
         this.resolution = -1;
