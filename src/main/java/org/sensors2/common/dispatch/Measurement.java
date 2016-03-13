@@ -90,7 +90,7 @@ public class Measurement {
 				for(int i = 0; i < event.getPointerCount(); i++) {
 					int pointerId = event.getPointerId(i);
 					float x = event.getX(i) / width;
-					float y = event.getY(i) / height;
+					float y = (height - event.getY(i)) / height;
 					measurements.add(touchMeasurement(pointerId, x, y));
 				}
 				break;
