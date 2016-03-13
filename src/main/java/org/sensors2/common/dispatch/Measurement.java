@@ -93,6 +93,7 @@ public class Measurement {
 					float y = event.getY(i) / height;
 					measurements.add(touchMeasurement(pointerId, x, y));
 				}
+				break;
 			}
 
 			case MotionEvent.ACTION_UP:
@@ -100,6 +101,7 @@ public class Measurement {
 			case MotionEvent.ACTION_CANCEL: {
 				int pointerId = event.getPointerId(event.getActionIndex());
 				measurements.add(touchMeasurement(pointerId, -1, -1));
+				break;
 			}
 		}
 
