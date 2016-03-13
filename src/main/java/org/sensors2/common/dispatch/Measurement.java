@@ -5,6 +5,9 @@ import android.nfc.NdefMessage;
 import android.os.Build;
 import android.view.MotionEvent;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by thomas on 03.11.14.
  */
@@ -14,11 +17,15 @@ public class Measurement {
 	private final String name;
 	private final MeasurementType type;
 
-	public Measurement(int sensorType, float[] values) {
+	public Measurement(int sensorType, float[] values, String name, MeasurementType type) {
 		this.sensorType = sensorType;
 		this.values = values;
-		this.name = "";
-		this.type = MeasurementType.Sensor;
+		this.name = name;
+		this.type = type;
+	}
+
+	public Measurement(int sensorType, float[] values) {
+		this(sensorType, values, "", MeasurementType.Sensor);
 	}
 
 	public Measurement(NdefMessage msg) {
@@ -53,6 +60,51 @@ public class Measurement {
 		this.type = MeasurementType.Touch;
 	}
 
+	public static int pointerIdToSensorType(int pointerId) {
+		return pointerId * -1;
+	}
+
+	private static Measurement touchMeasurement(int pointerId, float x, float y) {
+		int sensorType = pointerIdToSensorType(pointerId);
+		float[] values = {x, y};
+		return new Measurement(sensorType, values, "", MeasurementType.Touch);
+	}
+
+	// returns touch measurements with absolute screen coordinates
+	public static List<Measurement> measurements(MotionEvent event) {
+		return measurements(event, 1, 1);
+	}
+
+	// returns touch measurements with relative coordinates ( x/y values range from 0 to 1)
+	public static List<Measurement> measurements(MotionEvent event, int width, int height) {
+		if(width == 0 || height == 0) throw new IllegalArgumentException();
+
+		List<Measurement> measurements = new LinkedList<>();
+
+		int maskedAction = event.getActionMasked();
+
+		switch (maskedAction) {
+			case MotionEvent.ACTION_DOWN:
+			case MotionEvent.ACTION_POINTER_DOWN:
+			case MotionEvent.ACTION_MOVE: {
+				for(int i = 0; i < event.getPointerCount(); i++) {
+					int pointerId = event.getPointerId(i);
+					float x = event.getX(i) / width;
+					float y = event.getY(i) / height;
+					measurements.add(touchMeasurement(pointerId, x, y));
+				}
+			}
+
+			case MotionEvent.ACTION_UP:
+			case MotionEvent.ACTION_POINTER_UP:
+			case MotionEvent.ACTION_CANCEL: {
+				int pointerId = event.getPointerId(event.getActionIndex());
+				measurements.add(touchMeasurement(pointerId, -1, -1));
+			}
+		}
+
+		return measurements;
+	}
 
 
 	private String getHex(byte[] bytes) {
