@@ -61,7 +61,7 @@ public class Measurement {
 	}
 
 	public static int pointerIdToSensorType(int pointerId) {
-		return pointerId * -1;
+		return (pointerId + 1) * -1;
 	}
 
 	private static Measurement touchMeasurement(int pointerId, float x, float y) {
