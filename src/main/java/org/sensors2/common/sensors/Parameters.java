@@ -13,6 +13,17 @@ public abstract class Parameters {
     private final float range;
     private final float resolution;
 
+    // This constructor is being called, when no orientation sensor has been found, but the real sensors (accelerometer and magnetic field) are there.
+    // Orientation has been deprecated by Google, but not all give a damn about that.
+    public Parameters() {
+        this.dimensions = 3;
+        this.sensorName = Sensor.STRING_TYPE_ORIENTATION;
+        // Let's use some sensible values, range is correct.
+        this.range = 360f;
+        this.resolution = 0.01f;
+        // Hopefully no real sensor type -1 will ever be on any phone whatsoever.
+        this.sensorType = -1;
+    }
 
     public Parameters(Sensor sensor) {
         this.sensorType = sensor.getType();
@@ -122,7 +133,7 @@ public abstract class Parameters {
                 break;
 
             default:
-                this.dimensions = 6; // the maximum
+                this.dimensions = 12; // the maximum
                 break;
             //throw new IllegalArgumentException();
         }
