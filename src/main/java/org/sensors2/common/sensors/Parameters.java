@@ -13,6 +13,9 @@ public abstract class Parameters {
     private final float range;
     private final float resolution;
 
+    public static final int MAX_DIMENSIONS = 15;
+    public static final int FAKE_ORIENTATION = Integer.MAX_VALUE;
+
     // This constructor is being called, when no orientation sensor has been found, but the real sensors (accelerometer and magnetic field) are there.
     // Orientation has been deprecated by Google, but not all give a damn about that.
     public Parameters() {
@@ -22,7 +25,7 @@ public abstract class Parameters {
         this.range = 360f;
         this.resolution = 0.01f;
         // Hopefully no real sensor type -1 will ever be on any phone whatsoever.
-        this.sensorType = -1;
+        this.sensorType = FAKE_ORIENTATION;
     }
 
     public Parameters(Sensor sensor) {
@@ -133,7 +136,7 @@ public abstract class Parameters {
                 break;
 
             default:
-                this.dimensions = 12; // the maximum
+                this.dimensions = MAX_DIMENSIONS; // the maximum
                 break;
             //throw new IllegalArgumentException();
         }
