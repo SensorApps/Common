@@ -22,9 +22,8 @@ public abstract class Parameters {
         this.dimensions = 3;
         this.sensorName = Sensor.STRING_TYPE_ORIENTATION;
         // Let's use some sensible values, range is correct.
-        this.range = 360f;
+        this.range = (float) Math.PI;
         this.resolution = 0.01f;
-        // Hopefully no real sensor type -1 will ever be on any phone whatsoever.
         this.sensorType = FAKE_ORIENTATION;
     }
 
