@@ -147,6 +147,58 @@ public abstract class Parameters {
             case 25:
                 this.dimensions = 1;
                 break;
+            // TYPE_POSE_6DOF
+            case 28:
+                this.dimensions = 15;
+                break;
+            // TYPE_STATIONARY_DETECT
+            case 29:
+                this.dimensions = 1;
+                break;
+            // TYPE_MOTION_DETECT
+            case 30:
+                this.dimensions = 1;
+                break;
+            // TYPE_HEART_BEAT
+            case 31:
+                this.dimensions = 1;
+                break;
+            // TYPE_LOW_LATENCY_OFFBODY_DETECT
+            case 34:
+                this.dimensions = 1;
+                break;
+            // TYPE_ACCELEROMETER_UNCALIBRATED
+            case 35:
+                this.dimensions = 6;
+                break;
+            // TYPE_HINGE_ANGLE
+            case 36:
+                this.dimensions = 1;
+                break;
+            // TYPE_HEAD_TRACKER
+            case 37:
+                this.dimensions = 6;
+                break;
+            // TYPE_ACCELEROMETER_LIMITED_AXES
+            case 38:
+                this.dimensions = 6;
+                break;
+            // TYPE_GYROSCOPE_LIMITED_AXES
+            case 39:
+                this.dimensions = 6;
+                break;
+            // TYPE_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED
+            case 40:
+                this.dimensions = 9;
+                break;
+            // TYPE_GYROSCOPE_LIMITED_AXES_UNCALIBRATED
+            case 41:
+                this.dimensions = 9;
+                break;
+            // TYPE_HEADING
+            case 42:
+                this.dimensions = 2;
+                break;
 
             default:
                 this.dimensions = MAX_DIMENSIONS; // the maximum
