@@ -28,9 +28,19 @@ android {
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 31
+        versionName '0.3.0'
     }
 }
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
+}
+afterEvaluate {
+    publishing {
+        publications {
+            productionRelease(MavenPublication) {
+                from components.release
+            }
+        }
+    }
 }
