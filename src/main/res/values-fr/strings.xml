@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="sensor_rate_explanation">Des taux plus rapides vous donneront des messages plus fins, mais videront votre batterie plus rapidement.</string>
+    <string name="current_value">Valeur actuelle</string>
+    <string name="sensor_continuously">Envoyer des données en continu</string>
+    <string name="sensor_rate">Fréquence du capteur</string>
+    <string name="sensors">Capteurs</string>
+</resources>
