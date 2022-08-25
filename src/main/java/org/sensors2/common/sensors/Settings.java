@@ -15,7 +15,7 @@ public abstract class Settings {
 	}
 
 	public int setSensorRate(SharedPreferences preferences) {
-		return Integer.valueOf(preferences.getString("pref_general_sensor_rate", "1"));
+		return Integer.parseInt(preferences.getString("pref_general_sensor_rate", "1"));
 	}
 
 	public int getSensorRate() {

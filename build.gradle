@@ -22,13 +22,13 @@ allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    compileSdk 32
     buildToolsVersion '30.0.3'
 
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 31
-        versionName '0.3.0'
+        targetSdk 32
+        versionName '0.4.0'
     }
 }
 

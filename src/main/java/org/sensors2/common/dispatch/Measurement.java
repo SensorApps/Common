@@ -128,10 +128,10 @@ public class Measurement {
     private long getDec(byte[] bytes) {
         long result = 0;
         long factor = 1;
-        for (int i = 0; i < bytes.length; ++i) {
-            long value = bytes[i] & 0xffl;
+        for (byte aByte : bytes) {
+            long value = aByte & 0xffL;
             result += value * factor;
-            factor *= 256l;
+            factor *= 256L;
         }
         return result;
     }
@@ -140,9 +140,9 @@ public class Measurement {
         long result = 0;
         long factor = 1;
         for (int i = bytes.length - 1; i >= 0; --i) {
-            long value = bytes[i] & 0xffl;
+            long value = bytes[i] & 0xffL;
             result += value * factor;
-            factor *= 256l;
+            factor *= 256L;
         }
         return result;
     }

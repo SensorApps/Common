@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/sensors">
         <org.sensors2.common.preferences.ExtendedListPreference
             android:defaultValue="1"
@@ -9,6 +10,7 @@
             android:numeric="integer"
             android:persistent="true"
             android:summary="@string/sensor_rate_explanation"
-            android:title="@string/sensor_rate"/>
+            android:title="@string/sensor_rate"
+            tools:ignore="Deprecated" />
     </PreferenceCategory>
 </PreferenceScreen>
