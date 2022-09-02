@@ -1,8 +1,9 @@
 package org.sensors2.common.preferences;
 
 import android.content.Context;
-import android.preference.EditTextPreference;
 import android.util.AttributeSet;
+
+import androidx.preference.EditTextPreference;
 
 /**
  * Created by thomas on 03.11.14.

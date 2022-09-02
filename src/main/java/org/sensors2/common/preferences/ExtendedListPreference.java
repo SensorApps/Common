@@ -1,10 +1,11 @@
 package org.sensors2.common.preferences;
 
 import android.content.Context;
-import android.preference.ListPreference;
 import android.util.AttributeSet;
 
 import org.sensors2.common.R;
+
+import androidx.preference.ListPreference;
 
 /**
  * Created by thomas on 03.11.14.
@@ -23,19 +24,21 @@ public class ExtendedListPreference extends ListPreference {
 		} else {
 			this.summaryText = this.getContext().getResources().getString(resId);
 		}
-
 	}
 
 	public ExtendedListPreference(Context context) {
 		super(context);
 	}
 
-	@Override
 	protected void onDialogClosed(boolean positiveResult) {
-		super.onDialogClosed(positiveResult);
 		if (positiveResult) {
 			this.setSummary(this.getSummary());
 		}
+	}
+
+	@Override
+	protected void onClick(){
+		super.onClick();
 	}
 
 	@Override
