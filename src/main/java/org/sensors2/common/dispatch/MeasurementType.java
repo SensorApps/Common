@@ -7,5 +7,6 @@ public enum MeasurementType {
 	Sensor,
 	Wifi,
 	Touch,
-	Nfc
+	Nfc,
+	Location
 }

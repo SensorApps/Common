@@ -1,5 +1,6 @@
 package org.sensors2.common.dispatch;
 
+import android.location.Location;
 import android.net.wifi.ScanResult;
 import android.nfc.NdefMessage;
 import android.os.Build;
@@ -60,6 +61,20 @@ public class Measurement {
         this.values[1] = motionEvent.getY();
         this.type = MeasurementType.Touch;
         this.stringValue = null;
+    }
+
+    public Measurement(Location location){
+        this.sensorType = 0;
+        this.name = "";
+        this.values = new float[5];
+        this.values[0] = (float)location.getLatitude();
+        this.values[1] = (float)location.getLongitude();
+        this.values[2] = (float)location.getAltitude();
+        this.values[3] = (float)location.getBearing();
+        this.values[4] = (float)location.getAccuracy();
+        this.type = MeasurementType.Location;
+        this.stringValue = null;
+
     }
 
     public static int pointerIdToSensorType(int pointerId) {
