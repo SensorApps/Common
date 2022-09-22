@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Comum</string>
+    <string name="sensor_rate">Frequência de amostragem dos sensores</string>
+    <string name="sensor_rate_explanation">Uma frequência alta resulta em mensagens com saltos menores entre amostras, mas gastará mais bateria.</string>
+    <string name="sensors">Sensores</string>
+    <string name="sensor_continuously">Enviar dado continuamente</string>
+    <string name="current_value">Valor atual</string>
+</resources>
