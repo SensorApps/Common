@@ -17,6 +17,8 @@ public abstract class Parameters {
     public static final int FAKE_ORIENTATION = Integer.MAX_VALUE;
     public static final int INCLINATION = Integer.MAX_VALUE - 1;
     public static final String STRING_INCLINATION = "Inclination";
+    public static final int GEOLOCATION = Integer.MIN_VALUE;
+    public static final String STRING_GEOLOCATION = "Geolocation";
 
     // This constructor is being called, when no orientation sensor has been found, but the real sensors (accelerometer and magnetic field) are there.
     // Orientation has been deprecated by Google, but not all give a damn about that.
@@ -24,6 +26,11 @@ public abstract class Parameters {
         this.sensorType = sensorType;
         this.resolution = 0.01f;
         switch (sensorType) {
+            case GEOLOCATION:
+                this.dimensions = 5;
+                this.sensorName = STRING_GEOLOCATION;
+                this.range = (float) Math.PI;
+                break;
             case FAKE_ORIENTATION:
                 this.dimensions = 3;
                 this.sensorName = Sensor.STRING_TYPE_ORIENTATION;
