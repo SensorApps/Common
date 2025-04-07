@@ -3,6 +3,8 @@ package org.sensors2.common.sensors;
 import android.hardware.Sensor;
 import android.nfc.NfcAdapter;
 
+import static java.lang.Math.PI;
+
 /**
  * Created by thomas on 05.11.14.
  */
@@ -10,7 +12,7 @@ public abstract class Parameters {
     private final int sensorType;
     private final int dimensions;
     private final String sensorName;
-    private final float range;
+    private float range;
     private final float resolution;
 
     public static final int MAX_DIMENSIONS = 16;
@@ -34,12 +36,12 @@ public abstract class Parameters {
             case FAKE_ORIENTATION:
                 this.dimensions = 3;
                 this.sensorName = Sensor.STRING_TYPE_ORIENTATION;
-                this.range = (float) Math.PI;
+                this.range = (float) PI;
                 break;
             case INCLINATION:
                 this.dimensions = 1;
                 this.sensorName = STRING_INCLINATION;
-                this.range = (float) Math.PI / 2f;
+                this.range = (float) PI / 2f;
                 break;
             default:
                 this.dimensions = MAX_DIMENSIONS;
@@ -65,6 +67,7 @@ public abstract class Parameters {
             // 3 int TYPE_ORIENTATION This constant was deprecated in API level 8. use SensorManager.getOrientation() instead.
             case 3:
                 this.dimensions = 3;
+                this.range = (float) (this.range * PI / 180f);
                 break;
             // 4 int TYPE_GYROSCOPE A constant describing a gyroscope sensor type
             case 4:

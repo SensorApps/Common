@@ -10,6 +10,8 @@ import org.sensors2.common.dispatch.Measurement;
 
 import java.util.List;
 
+import static java.lang.Math.PI;
+
 /**
  * Created by thomas on 05.11.14.
  */
@@ -57,6 +59,11 @@ public class SensorCommunication {
 	}
 
 	public void dispatch(SensorEvent sensorEvent) {
+		if (sensorEvent.sensor.getType() == Sensor.TYPE_ORIENTATION){
+			sensorEvent.values[0] = (float) (sensorEvent.values[0]* PI / 180f);
+			sensorEvent.values[1] = (float) (sensorEvent.values[1]* PI / 180f);
+			sensorEvent.values[2] = (float) (sensorEvent.values[2]* PI / 180f);
+		}
 		this.dispatcher.dispatch(new Measurement(sensorEvent.sensor.getType(), sensorEvent.values));
 	}
 
