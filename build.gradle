@@ -1,10 +1,13 @@
 buildscript {
+    ext {
+        agp_version = '7.4.2'
+    }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "com.android.tools.build:gradle:$agp_version"
     }
 }
 
@@ -22,20 +25,23 @@ allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdk 33
-    buildToolsVersion '30.0.3'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
 
     defaultConfig {
         minSdkVersion 8
-        targetSdk 33
-        versionName '0.4.0'
+        targetSdk 35
+        versionName '0.5.0'
+    }
+    publishing {
+        singleVariant("release")
     }
 }
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.preference:preference:1.2.1'
 }
 afterEvaluate {
     publishing {
