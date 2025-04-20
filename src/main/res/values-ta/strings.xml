@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="sensor_rate_explanation">வேகமான விகிதங்கள் உங்களுக்கு மிகவும் சிறந்த சிறந்த செய்திகளைத் தரும், ஆனால் உங்கள் பேட்டரியை வேகமாக வெளியேற்றும்.</string>
+    <string name="sensor_rate_explanation">வேகமான விகிதங்கள் உங்களுக்கு மிகவும் சிறந்த செய்திகளைத் தரும், ஆனால் உங்கள் பேட்டரியை வேகமாக வெளியேற்றும்.</string>
     <string name="current_value">தற்போதைய மதிப்பு</string>
     <string name="sensors">சென்சார்கள்</string>
     <string name="app_name">பொது</string>
