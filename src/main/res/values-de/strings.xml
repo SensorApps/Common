@@ -5,4 +5,5 @@
     <string name="sensors">Sensoren</string>
     <string name="sensor_continuously">Daten laufend senden</string>
     <string name="current_value">Aktueller Wert</string>
+    <string name="app_name">Gemeinsam</string>
 </resources>
