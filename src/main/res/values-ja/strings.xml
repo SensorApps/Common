@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Common</string>
     <string name="sensor_rate_explanation">レートが速いとより詳細なメッセージを取得することができますが、バッテリーの消耗が早くなります。</string>
     <string name="sensor_rate">センサーレート</string>
     <string name="sensors">センサー</string>

@@ -5,5 +5,4 @@
     <string name="sensor_rate">Frequência de amostragem dos sensores</string>
     <string name="sensor_rate_explanation">Uma frequência alta resulta em mensagens com saltos menores entre amostras, mas gastará mais bateria.</string>
     <string name="sensors">Sensores</string>
-    <string name="app_name">Comum</string>
 </resources>
