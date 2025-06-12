@@ -1,3 +1,5 @@
+**Due to Github's determination to be the "world’s leading AI-powered developer platform" this project has been moved over to [Codeberg](https://codeberg.org/Residuum/SensorApps-Common)**
+
 Library for using and dispatching sensor data in Android apps.
 
 # Translation
